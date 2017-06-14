@@ -15,6 +15,7 @@
       <div class="navbar-header">
         <%= link_to "VSForums", root_path, class: "navbar-brand" %>
       </div>
+
       <ul class="nav navbar-nav">
         <li><%= link_to "Sign Up", new_user_registration_path %></li>
         <% if user_signed_in? %>
@@ -23,14 +24,19 @@
           <li><%= link_to "Sign In", new_user_session_path %></li> 
         <% end %>
       </ul>
+
       <% if user_signed_in? %>
       <p><%= link_to "Create New Post", new_post_path, class: "navbar-right navbar-text navbar-link" %></p>
       <% end %>
+
     </div>
   </div>
+
+  <!-- Devise paste -->
          <p class="notice"><%= notice %></p>
        <p class="alert"><%= alert %></p>
-       
+  <!-- Devise paste -->
+  
     <%= yield %>
   </body>
 </html>
