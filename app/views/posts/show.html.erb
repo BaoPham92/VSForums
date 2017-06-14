@@ -1,3 +1,5 @@
 <h2><%= @post.title %></h2>
 <!-- Add a posted at timestamp -->
 <p><%= @post.description %></p>
+
+<%= link_to "Edit", edit_post_path(@post) %>
