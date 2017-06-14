@@ -2,4 +2,6 @@
 <!-- Add a posted at timestamp -->
 <p><%= @post.description %></p>
 
+<%= link_to "Back", root_path %>
 <%= link_to "Edit", edit_post_path(@post) %>
+<%= link_to "Delete", post_path(@post), method: :delete, data: { confirm: "Do you want to delete this content?"} %>
