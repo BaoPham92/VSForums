@@ -1,9 +1,12 @@
-<h1>Home Page Of VSForums</h1>
+<div>
+	<h1>Home Page Of VSForums</h1>
+		<h3>A Page For Personal Blogs</h3>
+</div><br><br>
 
 <% @posts.each do |post| %>
-	<h2><%= post.title %></h2>
-	<%= link_to "Read Post", post_path(post), class: "btn btn-default" %>
+	<h4><%= post.title %></h4>
+	<div><%= truncate(post.description, :length => 150) %></div>
+<br>
+	<%= link_to "Read", post_path(post), class: "btn btn-default" %>
 	
 <% end %>
-
-<%= link_to "New Post", new_post_path %>

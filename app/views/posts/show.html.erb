@@ -1,6 +1,7 @@
 	
-<h2><%= @post.title %></h2>
-<p><%= @post.user.email %> <%= time_ago_in_words(@post.created_at) %></p>
+<h3><%= @post.title %></h3>
+<strong> Created by <%= @post.user.email %> <%= time_ago_in_words(@post.created_at) %></strong><br><br>
+
 <p><%= @post.description %></p>
 
 <h4>Comments:</h4>
@@ -9,7 +10,8 @@
 <h4>Reply to post:</h4>
 	<%= render 'comments/form' %>
 
-
 <%= link_to "Back", root_path %>
+
 	<%= link_to "Edit", edit_post_path(@post) %>
+
 		<%= link_to "Delete", post_path(@post), method: :delete, data: { confirm: "Do you want to delete this content?"} %>

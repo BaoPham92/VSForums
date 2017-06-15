@@ -10,6 +10,7 @@
 
   <body>
 
+
   <div class="navbar navbar-default">
     <div class="container">
       <div class="navbar-header">
@@ -38,5 +39,8 @@
   <!-- Devise paste -->
   
     <%= yield %>
+    
+<%= will_paginate @posts, :page_links => false %>
+  
   </body>
 </html>
