@@ -1,13 +1,14 @@
+	
 <h2><%= @post.title %></h2>
-<!-- Add a posted at timestamp -->
+<p><%= @post.user.email %> <%= time_ago_in_words(@post.created_at) %></p>
 <p><%= @post.description %></p>
 
+<h4>Comments:</h4>
+	<%= render @post.comments %>
 
 <h4>Reply to post:</h4>
 	<%= render 'comments/form' %>
 
-<h4>Comments:</h4>
-	<%= render @post.comments %>
 
 <%= link_to "Back", root_path %>
 	<%= link_to "Edit", edit_post_path(@post) %>
