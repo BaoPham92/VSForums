@@ -8,5 +8,12 @@
 	<div><%= truncate(post.description, :length => 150) %></div>
 <br>
 	<%= link_to "Read", post_path(post), class: "btn btn-default" %>
+
 	
 <% end %>
+
+	<div class="digg_pagination">
+    <div class="page_info">
+      <%= page_entries_info @post %>
+    </div>
+    <%= will_paginate @post, :container => false %>
